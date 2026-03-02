@@ -33,7 +33,7 @@ function ensureAuth(appName) {
 }
   
 app.get("/app3", ensureAuth("app3"), (req, res) => {
-  res.send("<h1>APP 3</h1><a href='/app1'>Torna ad App1</a>");
+  res.send("<head><meta charset='UTF-8'><title>APP3</title><style>body {margin: 0;padding: 0;font-family: Arial, sans-serif;background: linear-gradient(135deg, #fff8a6, #ffef70, #ffe26b);color: #6b5200;}header {background-color: #f4c430;color: white;padding: 20px;text-align: center;font-size: 2em;letter-spacing: 1px;}.container {margin: 40px auto;width: 80%;background: white;padding: 20px 30px;border-radius: 12px;box-shadow: 0 4px 12px rgba(0,0,0,0.2);} h2 {color: #f4c430;} button {padding: 12px 20px;font-size: 1em;background-color: #f4c430;color: white;border: none;border-radius: 6px;cursor: pointer;transition: 0.3s;} button:hover {background-color: #d5a72a;}</style></head><body><header>💛 Benvenuti in APP3 💛</header><div class='container'><p>Questa è una pagina di prova di Francesco e Loredana.</p></div></body>");
 });
  
 // ACS distinti
@@ -43,4 +43,5 @@ app.post("/app3/acs",
   (req, res) => res.redirect("/app3")
 );
  
+
 app.listen(process.env.PORT || 3000);
